@@ -36,6 +36,18 @@ QUERY (each question)
 - **Grounded generation with abstention.** The model is instructed to use only the supplied fragments and to answer *"El reglamento no lo indica en los fragmentos consultados."* when they do not contain the answer.
 - **Deterministic ingestion.** No LLM is used to split documents, so re-running it on a new version of the regulation gives a reproducible result.
 
+### Why no frameworks (LangChain / LlamaIndex)?
+
+LangChain (orchestration: chains, agents, tools, memory) and LlamaIndex (connecting your data to an LLM:
+loaders, indexes, query engines) are libraries that ship these RAG pieces pre-built, with connectors for
+PDFs, databases and dozens of vector stores. They are great for fast prototypes and wide integrations.
+
+I deliberately did not use them here: the goal is to understand and be able to explain every stage
+(chunking, embeddings, similarity search, prompt construction), and frameworks hide exactly those steps
+behind a single call, which makes it harder to tell whether a bad answer comes from the chunking, the
+retrieval or the prompt. For a production client project I would evaluate them for their connectors and
+speed, knowing what they do underneath and how to debug them.
+
 ## Setup
 
 Requires Python 3.11+.
@@ -132,6 +144,19 @@ CONSULTA (cada pregunta)
 - **numpy simple en vez de base de datos vectorial.** Con ~750 chunks, la búsqueda es un producto de matrices; deja el mecanismo a la vista.
 - **Generación anclada con abstención.** Se le indica al modelo usar solo los fragmentos y responder *"El reglamento no lo indica en los fragmentos consultados."* cuando no contienen la respuesta.
 - **Ingesta determinista.** No se usa un LLM para dividir documentos, así que volver a correrla con una nueva versión del reglamento da un resultado reproducible.
+
+### ¿Por qué sin frameworks (LangChain / LlamaIndex)?
+
+LangChain (orquestación: cadenas, agentes, herramientas, memoria) y LlamaIndex (conectar tus datos con un LLM:
+cargadores, índices, motores de consulta) son librerías que traen estas piezas de RAG ya armadas, con
+conectores para PDFs, bases de datos y decenas de bases vectoriales. Son ideales para prototipos rápidos
+y para integrar muchas fuentes.
+
+Acá elegí no usarlos a propósito: el objetivo es entender y poder explicar cada etapa (chunking,
+embeddings, búsqueda por similitud, armado del prompt), y los frameworks esconden justo esos pasos detrás
+de una sola llamada, lo que complica saber si una mala respuesta viene del chunking, de la búsqueda o del
+prompt. En un proyecto real para un cliente los evaluaría por sus conectores y su velocidad, sabiendo qué
+hacen por dentro y cómo depurarlos.
 
 ## Instalación
 
