@@ -2,3 +2,5 @@ sentence-transformers
 numpy
 anthropic
 pytest
+beautifulsoup4
+lxml
