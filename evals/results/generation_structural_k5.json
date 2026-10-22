@@ -1,0 +1,287 @@
+[
+ {
+  "id": "q01",
+  "question": "¿Qué prácticas de IA están prohibidas por el reglamento?",
+  "answerable": true,
+  "expected_answer": "El artículo 5 prohíbe: técnicas subliminales, manipuladoras o engañosas que alteren el comportamiento y causen perjuicios considerables; explotar vulnerabilidades por edad, discapacidad o situación social o económica; la puntuación ciudadana (social scoring) con trato perjudicial; predecir delitos solo a partir de perfiles o rasgos de personalidad; crear bases de datos de reconocimiento facial mediante extracción no selectiva de imágenes de internet o CCTV; inferir emociones en el trabajo y en centros educativos (salvo motivos médicos o de seguridad); categorización biométrica para inferir raza, opiniones políticas, afiliación sindical, creencias, vida u orientación sexual; y la identificación biométrica remota en tiempo real en espacios públicos con fines policiales, salvo excepciones.",
+  "answer": "Según el Artículo 5 del Reglamento, está prohibida la introducción en el mercado, puesta en servicio o utilización de un sistema de IA que:\n\n1. **Utilice técnicas subliminales** que trasciendan la conciencia de una persona, o técnicas deliberadamente manipuladoras o engañosas.\n\n2. **Objetivo o efecto**: alterar de manera sustancial el comportamiento de una persona o colectivo, mermando de manera apreciable su capacidad para tomar una decisión informada.\n\n3. **Resultado**: hacer que tomen una decisión que de otro modo no habrían tomado, de un modo que provoque o sea razonablemente probable que provoque perjuicios considerables a esa persona, otra persona o un colectivo. (Artículo 5)\n\nAdemás, el Considerando 31 especifica que están prohibidos los sistemas de IA que impliquen prácticas inaceptables de puntuación que den lugar a resultados perjudiciales o desfavorables, aunque aclara que esto no afecta a prácticas lícitas de evaluación de personas físicas efectuadas para un fin específico conforme al Derecho de la Unión y nacional. (Considerando 31)",
+  "context": [
+   "Artículo 5#1",
+   "Considerando 31#2",
+   "Considerando 157#2",
+   "Considerando 24#3",
+   "Considerando 24#4"
+  ],
+  "cites_expected": true,
+  "abstained": false,
+  "faithfulness": 5,
+  "correctness": 2,
+  "judge_note": "Todo lo afirmado está respaldado por los fragmentos (art. 5.1.a y considerando 31), pero la respuesta cubre solo la prohibición de técnicas subliminales/manipuladoras y menciona de forma vaga la puntuación, omitiendo la mayoría de las prácticas prohibidas esperadas (explotación de vulnerabilidades, predicción de delitos, bases de datos faciales, inferencia de emociones, categorización biométrica, identificación biométrica remota)."
+ },
+ {
+  "id": "q02",
+  "question": "¿Se puede usar identificación biométrica remota en tiempo real en espacios públicos con fines policiales?",
+  "answerable": true,
+  "expected_answer": "En principio está prohibida (art. 5.1.h), salvo que sea estrictamente necesaria para: buscar víctimas concretas de secuestro, trata o explotación sexual y personas desaparecidas; prevenir una amenaza específica, importante e inminente para la vida o un atentado terrorista; o localizar a un sospechoso de ciertos delitos graves (pena de al menos cuatro años). Requiere autorización previa de una autoridad judicial o administrativa independiente (en urgencia, solicitarla en un máximo de 24 horas), evaluación de impacto en derechos fundamentales y registro en la base de datos de la UE.",
+  "answer": "Sí, se puede usar identificación biométrica remota en tiempo real en espacios públicos con fines de garantía del cumplimiento del Derecho, pero **solo bajo condiciones muy restrictivas** (Artículo 5).\n\nEl uso está permitido únicamente si es **estrictamente necesario** para alcanzar uno de estos objetivos específicos:\n\ni) La búsqueda selectiva de víctimas concretas de secuestro, trata de seres humanos o explotación sexual, así como personas desaparecidas.\n\nii) La prevención de una amenaza específica, importante e inminente para la vida o seguridad física de personas, o de un atentado terrorista real y actual o previsible.\n\niii) La localización o identificación de una persona sospechosa de haber cometido un delito grave (castigado con pena privativa de libertad máxima de al menos cuatro años) para investigación, enjuiciamiento o ejecución de sanciones penales (Artículo 5).\n\n**Requisitos previos obligatorios:**\n- Evaluación de impacto sobre derechos fundamentales según el artículo 27\n- Registro en la base de datos de la UE según el artículo 49\n- Notificación a la autoridad de vigilancia del mercado y autoridad nacional de protección de datos (Artículo 5)\n- Límites temporales, geográficos y personales (Artículo 5)\n\nExcepcionalmente, en casos de urgencia debidamente justificados, puede comenzar sin el registro previo, pero debe completarse sin demora indebida (Artículo 5).",
+  "context": [
+   "Considerando 34#2",
+   "Artículo 5#8",
+   "Artículo 5#6",
+   "Artículo 5#11",
+   "Artículo 5#7"
+  ],
+  "cites_expected": true,
+  "abstained": false,
+  "faithfulness": 5,
+  "correctness": 3,
+  "judge_note": "Todo lo que afirma está respaldado por los fragmentos, pero omite la autorización previa de una autoridad judicial o administrativa independiente y el plazo de 24 horas en urgencia, y no enmarca el uso como una prohibición general (art. 5.1.h) con excepciones."
+ },
+ {
+  "id": "q03",
+  "question": "¿Cuándo se considera que un sistema de IA es de alto riesgo?",
+  "answerable": true,
+  "expected_answer": "Hay dos vías (art. 6): (1) cuando el sistema es componente de seguridad de un producto regulado por la legislación de armonización del anexo I, o es el propio producto, y ese producto exige evaluación de la conformidad por terceros; (2) cuando es uno de los sistemas del anexo III. Un sistema del anexo III no es de alto riesgo si no plantea un riesgo importante para la salud, la seguridad o los derechos fundamentales (por ejemplo, tarea de procedimiento limitada o tarea preparatoria), pero siempre lo es si elabora perfiles de personas físicas.",
+  "answer": "Según el Reglamento (UE) 2024/1689, un sistema de IA se considera de alto riesgo en dos casos:\n\n**Caso 1 - Componentes de seguridad de productos (Artículo 6.1):**\nUn sistema de IA es de alto riesgo cuando cumple simultáneamente dos condiciones:\n- El sistema esté destinado a ser utilizado como componente de seguridad de un producto que entre en el ámbito de aplicación de los actos legislativos de armonización de la Unión enumerados en el Anexo I, o que el propio sistema de IA sea uno de dichos productos; Y\n- El producto o el sistema de IA como producto deba someterse a una evaluación de la conformidad de terceros para su introducción en el mercado o puesta en servicio conforme a los actos legislativos de la Unión enumerados en el Anexo I. (Artículo 6)\n\n**Caso 2 - Sistemas específicos:**\nTambién se consideran de alto riesgo los sistemas de IA contemplados en el Anexo III. (Artículo 6.2)\n\nAdicionalmente, se clasifican como de alto riesgo sistemas de IA destinados a garantizar el cumplimiento del Derecho cuando su precisión, fiabilidad y transparencia sean especialmente importantes para evitar consecuencias adversas y garantizar rendición de cuentas. (Considerando 59)",
+  "context": [
+   "Considerando 123#1",
+   "Considerando 51#1",
+   "Considerando 49#1",
+   "Considerando 59#2",
+   "Artículo 6#1"
+  ],
+  "cites_expected": true,
+  "abstained": false,
+  "faithfulness": 4,
+  "correctness": 3,
+  "judge_note": "Las dos vías (art. 6.1 y anexo III) están bien explicadas y respaldadas por el contexto, pero omite la excepción del art. 6.3 y la regla de los perfiles de personas físicas. Además, presenta el considerando 59 como un tercer caso de clasificación, lo cual es una extrapolación débil."
+ },
+ {
+  "id": "q04",
+  "question": "¿Qué ámbitos de uso enumera el reglamento como de alto riesgo?",
+  "answerable": true,
+  "expected_answer": "El anexo III enumera ocho ámbitos: biometría; infraestructuras críticas; educación y formación profesional; empleo, gestión de los trabajadores y acceso al autoempleo; acceso a servicios privados y públicos esenciales y a prestaciones; garantía del cumplimiento del Derecho; migración, asilo y gestión del control fronterizo; y administración de justicia y procesos democráticos.",
+  "answer": "El reglamento enumera los siguientes ámbitos de uso como de alto riesgo:\n\n1. **Sistemas de IA componentes de seguridad de productos o productos en sí mismos** que entran en el ámbito de determinados actos legislativos de armonización de la Unión, específicamente: máquinas, juguetes, ascensores, equipo y sistemas de protección para atmósferas potencialmente explosivas, equipos radioeléctricos, equipos a presión, equipos de embarcaciones de recreo, instalaciones de transporte por cable, aparatos que queman combustibles gaseosos, productos sanitarios, productos sanitarios para diagnóstico in vitro, automoción y aviación. (Considerando 50)\n\n2. **Sistemas de IA destinados a fines de garantía del cumplimiento del Derecho**, cuando su precisión, fiabilidad y transparencia sean especialmente importantes para evitar consecuencias adversas, conservar la confianza de la población y garantizar la rendición de cuentas. (Considerando 59)\n\nSin embargo, los fragmentos consultados aclaran que también existe la posibilidad de que sistemas enumerados en un anexo no se consideren de alto riesgo en casos excepcionales, y que se proporcionarán directrices y ejemplos prácticos adicionales. (Considerando 53)",
+  "context": [
+   "Considerando 53#6",
+   "Considerando 59#2",
+   "Considerando 50#1",
+   "Considerando 65#3",
+   "Considerando 91#1"
+  ],
+  "cites_expected": false,
+  "abstained": false,
+  "faithfulness": 4,
+  "correctness": 2,
+  "judge_note": "Lo que afirma está respaldado por los considerandos 50, 59 y 53, aunque presenta la lista de productos como un 'ámbito de uso' y generaliza algo el considerando 53; en cambio, omite la enumeración del anexo III (ocho ámbitos) y solo cubre uno de ellos (garantía del cumplimiento del Derecho), por lo que es muy incompleta."
+ },
+ {
+  "id": "q05",
+  "question": "¿Qué obligaciones tienen los proveedores de sistemas de IA de alto riesgo?",
+  "answerable": true,
+  "expected_answer": "Según el art. 16, deben: garantizar que el sistema cumple los requisitos de la sección 2; indicar su nombre y dirección de contacto; contar con un sistema de gestión de la calidad; conservar la documentación y los archivos de registro; someter el sistema a la evaluación de la conformidad antes de comercializarlo; elaborar la declaración UE de conformidad y colocar el marcado CE; cumplir las obligaciones de registro; adoptar medidas correctoras e informar; demostrar la conformidad a petición de la autoridad; y cumplir los requisitos de accesibilidad.",
+  "answer": "Según el reglamento, los proveedores de sistemas de IA de alto riesgo están sujetos a **las obligaciones previstas en el artículo 16** (Artículo 25, partes 1 y 3).\n\nSin embargo, los fragmentos consultados no contienen el texto del artículo 16 que especifica cuáles son esas obligaciones concretas.\n\nLo que sí figura en los fragmentos es que:\n\n- **Los proveedores iniciales** que hayan introducido el sistema en el mercado deben cooperar estrechamente con nuevos proveedores y facilitar información necesaria, acceso técnico u otra asistencia razonable para el cumplimiento de las obligaciones, particularmente en la evaluación de conformidad (Artículo 25, parte 2).\n\n- Se anima a los proveedores a cumplir voluntariamente las obligaciones ya durante el período transitorio (Considerando 178).\n\nPara conocer las obligaciones específicas del artículo 16, sería necesario consultar ese artículo completo.",
+  "context": [
+   "Artículo 25#3",
+   "Artículo 25#1",
+   "Considerando 178#1",
+   "Artículo 55#2",
+   "Artículo 25#2"
+  ],
+  "cites_expected": false,
+  "abstained": false,
+  "faithfulness": 5,
+  "correctness": 2,
+  "judge_note": "Todo lo que afirma está respaldado por los fragmentos (referencia al art. 16, cooperación del proveedor inicial, considerando 178), pero no enumera ninguna de las obligaciones del art. 16 que pedía la respuesta esperada, así que solo responde de forma muy tangencial."
+ },
+ {
+  "id": "q06",
+  "question": "¿Qué obligaciones tienen los responsables del despliegue de sistemas de IA de alto riesgo?",
+  "answerable": true,
+  "expected_answer": "Según el art. 26, deben: usar el sistema conforme a las instrucciones de uso; encomendar la supervisión humana a personas competentes, formadas y con autoridad; garantizar que los datos de entrada sean pertinentes y representativos cuando los controlen; vigilar el funcionamiento e informar al proveedor y a la autoridad de riesgos o incidentes graves, suspendiendo el uso si procede; conservar los archivos de registro al menos seis meses; informar a los trabajadores antes de usarlo en el lugar de trabajo; informar a las personas afectadas por decisiones del anexo III; y cooperar con las autoridades.",
+  "answer": "Según el Artículo 26, los responsables del despliegue de sistemas de IA de alto riesgo tienen las siguientes obligaciones principales:\n\n1. **Uso conforme a instrucciones**: Adoptar medidas técnicas y organizativas adecuadas para utilizar los sistemas de acuerdo con las instrucciones de uso (Artículo 26, apartado 1).\n\n2. **Supervisión humana**: Encargar la supervisión humana a personas con competencia, formación y autoridad necesarias (Artículo 26, apartado 2).\n\n3. **Calidad de datos de entrada**: Asegurar que los datos de entrada sean pertinentes y suficientemente representativos para la finalidad prevista, en la medida que controlen dichos datos (Artículo 26, apartado 4).\n\n4. **Vigilancia del funcionamiento**: Vigilar el funcionamiento del sistema basándose en las instrucciones de uso (Artículo 26, apartado 5).\n\n5. **Notificación de riesgos e incidentes**: Informar sin demora indebida al proveedor y autoridad competente cuando identifiquen riesgos o incidentes graves (Artículo 26, apartado 5).\n\n6. **Información a trabajadores**: Si son empleadores, informar a representantes y trabajadores afectados antes de desplegar el sistema en el lugar de trabajo (Artículo 26, apartado 7).\n\n7. **Registro** (para autoridades públicas): Cumplir obligaciones de registro en la base de datos de la UE (Artículo 26, apartado 8).\n\n8. **Cooperación con autoridades**: Cooperar con las autoridades competentes en medidas relacionadas con la aplicación del Reglamento (Artículo 26, apartado 12).",
+  "context": [
+   "Artículo 26#10",
+   "Artículo 26#1",
+   "Artículo 26#5",
+   "Artículo 26#4",
+   "Artículo 26#2"
+  ],
+  "cites_expected": true,
+  "abstained": false,
+  "faithfulness": 4,
+  "correctness": 4,
+  "judge_note": "Casi todo está respaldado por el contexto, pero simplifica el apartado 5 (dice 'sin demora indebida' también para incidentes graves, que según el texto se informan 'inmediatamente') y omite la suspensión del uso; faltan además la conservación de registros (seis meses) y la información a las personas afectadas, aunque cubre la mayoría de lo esencial."
+ },
+ {
+  "id": "q07",
+  "question": "¿Qué obligación de transparencia existe cuando una persona interactúa directamente con un sistema de IA, como un chatbot?",
+  "answerable": true,
+  "expected_answer": "Los proveedores deben diseñar el sistema de forma que las personas sepan que están interactuando con una IA, salvo que resulte evidente para una persona razonablemente informada según el contexto (art. 50.1). La información debe darse de forma clara y distinguible a más tardar en la primera interacción (art. 50.5). La obligación no se aplica a sistemas autorizados por ley para detectar, prevenir, investigar o enjuiciar delitos.",
+  "answer": "Según el Artículo 50, apartado 1, los proveedores de sistemas de IA destinados a interactuar directamente con personas físicas deben garantizar que **estas personas estén informadas de que están interactuando con un sistema de IA**.\n\nSin embargo, esta obligación tiene una excepción: **no aplica cuando resulte evidente** desde el punto de vista de una persona física razonablemente informada, atenta y perspicaz, teniendo en cuenta las circunstancias y el contexto de utilización.\n\nAdemás, existe una excepción para sistemas de IA autorizados por ley para detectar, prevenir, investigar o enjuiciar delitos, siempre que no estén a disposición del público para denunciar un delito penal.\n\nLa información debe facilitarse **de manera clara y distinguible a más tardar con ocasión de la primera interacción** y debe ajustarse a los requisitos de accesibilidad aplicables (Artículo 50, apartado 5).",
+  "context": [
+   "Artículo 50#1",
+   "Artículo 50#4",
+   "Artículo 50#2",
+   "Considerando 132#1",
+   "Artículo 50#5"
+  ],
+  "cites_expected": true,
+  "abstained": false,
+  "faithfulness": 5,
+  "correctness": 5,
+  "judge_note": "La respuesta cubre la obligación del art. 50.1, la excepción por evidencia, la excepción para sistemas autorizados por ley para fines penales y el momento de la información (art. 50.5), todo respaldado por el contexto y coherente con la respuesta esperada."
+ },
+ {
+  "id": "q08",
+  "question": "¿Cuándo se clasifica un modelo de IA de uso general como modelo con riesgo sistémico?",
+  "answerable": true,
+  "expected_answer": "Según el art. 51, cuando tiene capacidades de gran impacto evaluadas con herramientas y metodologías técnicas adecuadas (indicadores y parámetros de referencia), o cuando la Comisión decide que tiene capacidades o un impacto equivalente según los criterios del anexo XIII. Se presume que tiene capacidades de gran impacto si la cantidad acumulada de cálculo usada para entrenarlo supera 10^25 operaciones de coma flotante.",
+  "answer": "Un modelo de IA de uso general se clasifica como modelo con riesgo sistémico cuando reúne alguna de las siguientes condiciones (Artículo 51):\n\na) **Tiene capacidades de gran impacto** evaluadas a partir de herramientas y metodologías técnicas adecuadas, como indicadores y parámetros de referencia.\n\nb) **Por decisión de la Comisión**, adoptada de oficio o a raíz de una alerta cualificada del grupo de expertos científicos, tiene capacidades o un impacto equivalente a los de la letra a), considerando los criterios del Anexo XIII.\n\n**Presunción legal**: Se presume que un modelo de IA de uso general tiene capacidades de gran impacto cuando la cantidad acumulada de cálculo utilizada para su entrenamiento, medida en operaciones de coma flotante, sea **superior a 10²⁵** (Artículo 51.2).\n\nEl proveedor debe notificar a la Oficina de IA a más tardar **dos semanas después de que se cumplan estos requisitos** (Considerando 112).",
+  "context": [
+   "Artículo 51#1",
+   "Considerando 113#1",
+   "Considerando 110#1",
+   "Considerando 112#1",
+   "Considerando 111#1"
+  ],
+  "cites_expected": true,
+  "abstained": false,
+  "faithfulness": 5,
+  "correctness": 5,
+  "judge_note": "La respuesta reproduce fielmente las dos condiciones del art. 51.1, la presunción de 10^25 operaciones de coma flotante y la notificación en dos semanas del considerando 112, todo respaldado por el contexto y coincidente con lo esperado."
+ },
+ {
+  "id": "q09",
+  "question": "¿Qué obligaciones tienen los proveedores de modelos de IA de uso general?",
+  "answerable": true,
+  "expected_answer": "Según el art. 53, deben: elaborar y mantener la documentación técnica del modelo (anexo XI) para la Oficina de IA y las autoridades; dar información y documentación a los proveedores que integren el modelo en sus sistemas (anexo XII); establecer una política para cumplir el Derecho de la UE sobre derechos de autor; publicar un resumen suficientemente detallado del contenido usado para el entrenamiento; y cooperar con la Comisión y las autoridades. Los modelos de código abierto con licencia libre quedan exentos de las dos primeras, salvo que tengan riesgo sistémico.",
+  "answer": "Los proveedores de modelos de IA de uso general tienen las siguientes obligaciones principales (Artículo 53):\n\n1. **Documentación técnica**: Elaborar y mantener actualizada la documentación técnica del modelo, incluyendo información sobre el proceso de entrenamiento, pruebas y resultados de evaluación, conforme al Anexo XI, para ponerla a disposición de la Oficina de IA y autoridades nacionales competentes previa solicitud (Artículo 53.1.a).\n\n2. **Información para proveedores posteriores**: Elaborar y mantener actualizada información y documentación para los proveedores de sistemas de IA que integren el modelo, que permita entender sus capacidades y limitaciones, conforme al Anexo XII, protegiendo derechos de propiedad intelectual y secretos comerciales (Artículo 53.1.b).\n\n3. **Cooperación**: Cooperar con la Comisión y autoridades nacionales competentes en el ejercicio de sus competencias (Artículo 53.3).\n\n**Cumplimiento**: Los proveedores pueden recurrir a códigos de buenas prácticas o normas armonizadas para demostrar conformidad. Si no se adhieren a estos, deben demostrar cumplimiento por medios alternativos (Artículo 53.4).\n\n**Exenciones y flexibilidades**: Se eximen personas que desarrollan o utilizan modelos con fines no profesionales o de investigación científica, y se permiten formas simplificadas para pymes (Considerando 109).",
+  "context": [
+   "Artículo 53#3",
+   "Considerando 101#1",
+   "Considerando 109#1",
+   "Artículo 53#1",
+   "Artículo 101#1"
+  ],
+  "cites_expected": true,
+  "abstained": false,
+  "faithfulness": 5,
+  "correctness": 3,
+  "judge_note": "Todo lo afirmado está respaldado por los fragmentos, pero omite la política de derechos de autor y el resumen del contenido de entrenamiento, y no menciona la exención de código abierto del art. 53.2, por lo que cubre solo parte de lo esencial."
+ },
+ {
+  "id": "q10",
+  "question": "¿Cuál es la multa máxima por incumplir las prácticas de IA prohibidas?",
+  "answerable": true,
+  "expected_answer": "Multas administrativas de hasta 35 000 000 EUR o, si el infractor es una empresa, de hasta el 7 % de su volumen de negocios mundial total del ejercicio financiero anterior, si esta cuantía fuese superior (art. 99.3). En el caso de las pymes se aplica el importe o porcentaje que sea menor (art. 99.6).",
+  "answer": "La multa máxima por incumplir las prácticas de IA prohibidas del artículo 5 es de **35.000.000 EUR** o, si el infractor es una empresa, de **hasta el 7% de su volumen de negocios mundial total** correspondiente al ejercicio financiero anterior, si esta cuantía fuese superior. (Artículo 99)\n\nNota: Para instituciones, órganos y organismos de la Unión, la multa máxima es diferente: hasta 1.500.000 EUR. (Artículo 100)",
+  "context": [
+   "Artículo 5#1",
+   "Artículo 100#3",
+   "Considerando 31#2",
+   "Considerando 28#1",
+   "Artículo 99#2"
+  ],
+  "cites_expected": true,
+  "abstained": false,
+  "faithfulness": 5,
+  "correctness": 4,
+  "judge_note": "La respuesta reproduce correctamente 35 M EUR o 7 % (art. 99.3) y la nota sobre instituciones de la Unión (1,5 M EUR, art. 100) está respaldada por el contexto, pero omite la regla para pymes (art. 99.6) incluida en la respuesta esperada."
+ },
+ {
+  "id": "q11",
+  "question": "¿Cuándo entra en vigor el reglamento y desde cuándo se aplica de forma general?",
+  "answerable": true,
+  "expected_answer": "Entra en vigor a los veinte días de su publicación en el Diario Oficial de la Unión Europea y es aplicable con carácter general a partir del 2 de agosto de 2026 (art. 113). Excepciones: los capítulos I y II se aplican desde el 2 de febrero de 2025; el capítulo III sección 4, los capítulos V, VII y XII y el art. 78 desde el 2 de agosto de 2025 (salvo el art. 101); y el art. 6.1 y sus obligaciones desde el 2 de agosto de 2027.",
+  "answer": "Según el Reglamento (UE) 2024/1689:\n\n**Entrada en vigor:** El Reglamento entra en vigor a los veinte días de su publicación en el Diario Oficial de la Unión Europea (Artículo 113).\n\n**Aplicación general:** Es aplicable a partir del **2 de agosto de 2026** (Artículo 113).\n\nNo obstante, existen excepciones con aplicación anticipada para determinadas disposiciones (Capítulos I y II desde el 2 de febrero de 2025; Capítulo III sección 4, Capítulo V, VII y XII desde el 2 de agosto de 2025, entre otras).",
+  "context": [
+   "Artículo 113#1",
+   "Considerando 179#1",
+   "Artículo 111#1",
+   "Artículo 112#3",
+   "Considerando 174#1"
+  ],
+  "cites_expected": true,
+  "abstained": false,
+  "faithfulness": 5,
+  "correctness": 4,
+  "judge_note": "Todo lo afirmado está respaldado por el art. 113 del contexto y coincide con lo esencial (entrada en vigor a los 20 días y aplicación general el 2/8/2026); omite la excepción del art. 6.1 (2027), el art. 78 y la salvedad del art. 101, aunque indica 'entre otras'."
+ },
+ {
+  "id": "q12",
+  "question": "¿Desde cuándo se aplican las obligaciones para los modelos de IA de uso general?",
+  "answerable": true,
+  "expected_answer": "El capítulo V (modelos de IA de uso general) es aplicable desde el 2 de agosto de 2025 (art. 113, letra b), salvo el artículo 101 (multas a proveedores de estos modelos). Los proveedores de modelos introducidos en el mercado antes del 2 de agosto de 2025 tienen hasta el 2 de agosto de 2027 para cumplir (art. 111.3).",
+  "answer": "Según el reglamento, las obligaciones de los proveedores de modelos de IA de uso general deben aplicarse desde el **2 de agosto de 2025** (Considerando 179).\n\nSin embargo, es importante notar que algunas disposiciones más generales del Reglamento comienzan a aplicarse desde el 2 de febrero de 2025, mientras que la mayoría de las disposiciones generales y las prohibiciones se aplican desde esa misma fecha, pero la infraestructura de gobernanza completa entra en operación el 2 de agosto de 2026 (Considerando 179).",
+  "context": [
+   "Considerando 179#1",
+   "Considerando 97#3",
+   "Artículo 53#2",
+   "Artículo 101#1",
+   "Considerando 97#2"
+  ],
+  "cites_expected": false,
+  "abstained": false,
+  "faithfulness": 4,
+  "correctness": 3,
+  "judge_note": "La fecha del 2 de agosto de 2025 está respaldada por el Considerando 179, pero el segundo párrafo es confuso y repetitivo, y atribuye al 2 de agosto de 2026 la entrada en operación de la 'infraestructura de gobernanza completa', cuando el contexto habla de organismos notificados y estructura de gobernanza. La respuesta omite además la excepción del art. 101 y el plazo hasta 2027 para modelos ya comercializados (art. 111.3), por lo que es solo parcialmente correcta."
+ },
+ {
+  "id": "q13",
+  "question": "¿Cómo se regulan las criptomonedas?",
+  "answerable": false,
+  "expected_answer": "El reglamento no lo indica en los fragmentos consultados.",
+  "answer": "El reglamento no lo indica en los fragmentos consultados.\n\nLos fragmentos proporcionados corresponden al Reglamento (UE) 2024/1689 sobre IA y no contienen información sobre regulación de criptomonedas.",
+  "context": [
+   "Artículo 74#1",
+   "Artículo 74#6",
+   "Considerando 69#1",
+   "Considerando 1#2",
+   "Considerando 8#2"
+  ],
+  "cites_expected": null,
+  "abstained": true,
+  "faithfulness": 5,
+  "correctness": 5,
+  "judge_note": "La respuesta se abstiene correctamente, igual que la respuesta esperada, y su aclaración de que los fragmentos no tratan criptomonedas es coherente con el contexto."
+ },
+ {
+  "id": "q14",
+  "question": "¿Qué dice la ley argentina de protección de datos personales sobre el uso de IA?",
+  "answerable": false,
+  "expected_answer": "El reglamento no lo indica en los fragmentos consultados.",
+  "answer": "El reglamento no lo indica en los fragmentos consultados.\n\nLos fragmentos proporcionados contienen solo disposiciones del Reglamento (UE) 2024/1689 (Ley de IA de la Unión Europea). No incluyen información sobre la legislación argentina de protección de datos personales.",
+  "context": [
+   "Considerando 27#2",
+   "Artículo 5#14",
+   "Considerando 69#1",
+   "Artículo 5#7",
+   "Artículo 5#13"
+  ],
+  "cites_expected": null,
+  "abstained": true,
+  "faithfulness": 5,
+  "correctness": 5,
+  "judge_note": "La respuesta se abstiene correctamente, igual que la esperada, y su aclaración de que los fragmentos solo contienen disposiciones del Reglamento (UE) 2024/1689 está respaldada por el contexto."
+ },
+ {
+  "id": "q15",
+  "question": "¿Qué impuestos deben pagar las empresas que desarrollan sistemas de IA?",
+  "answerable": false,
+  "expected_answer": "El reglamento no lo indica en los fragmentos consultados.",
+  "answer": "El reglamento no lo indica en los fragmentos consultados.\n\nLos fragmentos proporcionados no contienen información sobre impuestos que deben pagar las empresas desarrolladoras de sistemas de IA.",
+  "context": [
+   "Considerando 88#1",
+   "Artículo 3#1",
+   "Considerando 12#1",
+   "Considerando 103#1",
+   "Considerando 47#1"
+  ],
+  "cites_expected": null,
+  "abstained": true,
+  "faithfulness": 5,
+  "correctness": 5,
+  "judge_note": "El sistema se abstiene correctamente, igual que la respuesta esperada, y su afirmación de que los fragmentos no tratan impuestos es fiel al contexto."
+ }
+]
