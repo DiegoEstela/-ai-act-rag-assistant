@@ -74,8 +74,13 @@ python -m src.embed build                     # compute vectors
 python -m src.search "your question" -k 5     # retrieval only
 python -m src.ask "your question" --show-context   # full RAG answer with citations
 python -m src.ask "your question" --dry-run        # print the prompt, no API call
-pytest -q                                     # run tests
+pytest -q                                     # tests + retrieval quality gate (free, no API)
+pytest -q -m llm                              # generation quality gate (calls the API, ~1.5 min)
+python -m evals.retrieval                     # hit@k and MRR on the golden set
+python -m evals.generation                    # LLM-as-judge scores (calls the API)
 ```
+
+Quality thresholds live in `evals/thresholds.json`; `pytest` fails if a metric drops below them.
 
 Example:
 
@@ -184,8 +189,13 @@ python -m src.embed build                     # calcula los vectores
 python -m src.search "tu pregunta" -k 5       # solo búsqueda
 python -m src.ask "tu pregunta" --show-context     # respuesta RAG completa con citas
 python -m src.ask "tu pregunta" --dry-run          # muestra el prompt, sin llamar a la API
-pytest -q                                     # corre los tests
+pytest -q                                     # tests + control de calidad de la búsqueda (gratis, sin API)
+pytest -q -m llm                              # control de calidad de la generación (usa la API, ~1,5 min)
+python -m evals.retrieval                     # hit@k y MRR sobre el golden set
+python -m evals.generation                    # puntajes del juez LLM (usa la API)
 ```
+
+Los umbrales de calidad están en `evals/thresholds.json`; `pytest` falla si una métrica baja de ellos.
 
 ## Limitaciones conocidas
 
