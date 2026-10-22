@@ -104,7 +104,7 @@ La multa máxima ... depende del tipo de entidad:
 src/       ingestion, embeddings, search, generation, CLI
 evals/     golden set and evaluation code
 tests/     pytest tests
-docs/      project notes (RESUMEN.md, in Spanish)
+docs/      experiment write-ups (EXPERIMENTO.md, in Spanish)
 data/      raw and processed data (git-ignored)
 ```
 
@@ -210,6 +210,6 @@ Los umbrales de calidad están en `evals/thresholds.json`; `pytest` falla si una
 src/       ingesta, embeddings, búsqueda, generación, CLI
 evals/     golden set y código de evaluación
 tests/     tests con pytest
-docs/      notas del proyecto (RESUMEN.md)
+docs/      informes de experimentos (EXPERIMENTO.md)
 data/      datos crudos y procesados (ignorados por git)
 ```
