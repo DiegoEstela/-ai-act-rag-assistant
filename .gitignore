@@ -5,3 +5,8 @@ __pycache__/
 data/raw/
 data/processed/
 *.npy
+
+# local notes
+promt.md
+docs/RESUMEN.md
+docs/ENTREVISTA.md
