@@ -52,9 +52,11 @@ def main():
     sys.stdout.reconfigure(encoding="utf-8")
     ap = argparse.ArgumentParser(description="Retrieval evals (hit@k, MRR)")
     ap.add_argument("--strategy", choices=["structural", "fixed"], default="structural")
+    ap.add_argument("--no-recitals", action="store_true", help="search only articles and annexes")
     args = ap.parse_args()
-    res = evaluate(args.strategy)
-    print(f"strategy: {res['strategy']}  ({res['n']} answerable questions)\n")
+    index = Index(args.strategy, exclude_kinds=("considerando",) if args.no_recitals else ())
+    res = evaluate(args.strategy, index)
+    print(f"strategy: {res['strategy']}{' (no recitals)' if args.no_recitals else ''}  ({res['n']} answerable questions)\n")
     for r in res["rows"]:
         pos = r["rank"] if r["rank"] else "-"
         print(f"{r['id']}  rank={pos:<3} esperado={' / '.join(r['expected']):<28} top3={r['top3']}")

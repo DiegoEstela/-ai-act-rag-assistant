@@ -9,10 +9,13 @@ from src.embed import PROCESSED, embed_query
 
 
 class Index:
-    def __init__(self, strategy: str = "structural"):
-        self.chunks = json.loads((PROCESSED / f"chunks_{strategy}.json").read_text(encoding="utf-8"))
-        self.vectors = np.load(PROCESSED / f"vectors_{strategy}.npy")  # row i <-> chunks[i]
-        assert len(self.chunks) == len(self.vectors), "rebuild with: python -m src.embed build"
+    def __init__(self, strategy: str = "structural", exclude_kinds: tuple[str, ...] = ()):
+        chunks = json.loads((PROCESSED / f"chunks_{strategy}.json").read_text(encoding="utf-8"))
+        vectors = np.load(PROCESSED / f"vectors_{strategy}.npy")  # row i <-> chunks[i]
+        assert len(chunks) == len(vectors), "rebuild with: python -m src.embed build"
+        keep = [i for i, c in enumerate(chunks) if c["kind"] not in exclude_kinds]
+        self.chunks = [chunks[i] for i in keep]
+        self.vectors = vectors[keep]
 
     def search(self, question: str, k: int = 5) -> list[dict]:
         scores = self.vectors @ embed_query(question)  # unit vectors: dot product = cosine

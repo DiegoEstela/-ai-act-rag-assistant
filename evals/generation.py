@@ -52,12 +52,13 @@ def judge(q: dict, result: dict) -> dict:
     return json.loads(re.search(r"\{.*\}", text, re.S).group(0))
 
 
-def run(strategy: str, k: int, reuse: bool) -> list[dict]:
+def run(strategy: str, k: int, reuse: bool, exclude_kinds: tuple[str, ...] = ()) -> list[dict]:
     RESULTS.mkdir(parents=True, exist_ok=True)
-    path = RESULTS / f"generation_{strategy}_k{k}.json"
+    suffix = "_norecitals" if "considerando" in exclude_kinds else ""
+    path = RESULTS / f"generation_{strategy}_k{k}{suffix}.json"
     if reuse and path.exists():
         return json.loads(path.read_text(encoding="utf-8"))
-    index, rows = Index(strategy), []
+    index, rows = Index(strategy, exclude_kinds), []
     for q in load_golden():
         r = answer(q["question"], index, k)
         j = judge(q, r)
@@ -92,8 +93,9 @@ def main():
     ap.add_argument("--strategy", choices=["structural", "fixed"], default="structural")
     ap.add_argument("-k", type=int, default=5)
     ap.add_argument("--reuse", action="store_true", help="reuse saved answers and judgements, no API calls")
+    ap.add_argument("--no-recitals", action="store_true", help="search only articles and annexes")
     args = ap.parse_args()
-    rows = run(args.strategy, args.k, args.reuse)
+    rows = run(args.strategy, args.k, args.reuse, ("considerando",) if args.no_recitals else ())
     print()
     for r in rows:
         cite = {True: "cita", False: "NO cita", None: "-"}[r["cites_expected"]]

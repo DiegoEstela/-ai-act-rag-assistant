@@ -15,6 +15,14 @@ def test_search_returns_sorted_results_with_citation():
     assert all(r["source"] for r in res)
 
 
+def test_exclude_kinds_removes_recitals_from_the_index():
+    full, no_recitals = Index("structural"), Index("structural", exclude_kinds=("considerando",))
+    assert len(no_recitals.chunks) == len(no_recitals.vectors) < len(full.chunks)
+    assert all(c["kind"] != "considerando" for c in no_recitals.chunks)
+    res = no_recitals.search("¿Qué prácticas de IA están prohibidas?", k=5)
+    assert all(r["kind"] != "considerando" for r in res)
+
+
 def test_prohibited_practices_question_finds_article_5():
     res = Index("structural").search("¿Qué prácticas de IA están prohibidas?", k=3)
     assert "Artículo 5" in {r["source"] for r in res}
