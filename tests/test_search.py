@@ -16,7 +16,7 @@ def test_search_returns_sorted_results_with_citation():
 
 
 def test_exclude_kinds_removes_recitals_from_the_index():
-    full, no_recitals = Index("structural"), Index("structural", exclude_kinds=("considerando",))
+    full, no_recitals = Index("structural", exclude_kinds=()), Index("structural")  # recitals excluded by default
     assert len(no_recitals.chunks) == len(no_recitals.vectors) < len(full.chunks)
     assert all(c["kind"] != "considerando" for c in no_recitals.chunks)
     res = no_recitals.search("¿Qué prácticas de IA están prohibidas?", k=5)

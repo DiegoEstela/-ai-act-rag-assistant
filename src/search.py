@@ -8,8 +8,12 @@ import numpy as np
 from src.embed import PROCESSED, embed_query
 
 
+# Recitals explain the rules but outrank the articles we have to cite (see docs/EXPERIMENTO.md).
+DEFAULT_EXCLUDE = ("considerando",)
+
+
 class Index:
-    def __init__(self, strategy: str = "structural", exclude_kinds: tuple[str, ...] = ()):
+    def __init__(self, strategy: str = "structural", exclude_kinds: tuple[str, ...] = DEFAULT_EXCLUDE):
         chunks = json.loads((PROCESSED / f"chunks_{strategy}.json").read_text(encoding="utf-8"))
         vectors = np.load(PROCESSED / f"vectors_{strategy}.npy")  # row i <-> chunks[i]
         assert len(chunks) == len(vectors), "rebuild with: python -m src.embed build"
@@ -29,8 +33,10 @@ def main():
     ap.add_argument("question")
     ap.add_argument("-k", type=int, default=5)
     ap.add_argument("--strategy", choices=["structural", "fixed"], default="structural")
+    ap.add_argument("--with-recitals", action="store_true", help="also search the recitals (considerandos)")
     args = ap.parse_args()
-    for r in Index(args.strategy).search(args.question, args.k):
+    exclude = () if args.with_recitals else DEFAULT_EXCLUDE
+    for r in Index(args.strategy, exclude).search(args.question, args.k):
         label = r["source"] if r["kind"] != "fixed" else " / ".join(r["sources"])
         print(f"{r['score']:.3f}  {label}  [{r['id']}]")
         print("       " + r["text"].replace("\n", " ")[:160] + "...")

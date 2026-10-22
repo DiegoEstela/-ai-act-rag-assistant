@@ -7,7 +7,7 @@ import argparse
 import sys
 
 from evals.golden import load_golden
-from src.search import Index
+from src.search import DEFAULT_EXCLUDE, Index
 
 KS = (1, 3, 5, 10)
 POOL = 50  # chunks fetched before collapsing them into a ranking of articles
@@ -52,11 +52,11 @@ def main():
     sys.stdout.reconfigure(encoding="utf-8")
     ap = argparse.ArgumentParser(description="Retrieval evals (hit@k, MRR)")
     ap.add_argument("--strategy", choices=["structural", "fixed"], default="structural")
-    ap.add_argument("--no-recitals", action="store_true", help="search only articles and annexes")
+    ap.add_argument("--with-recitals", action="store_true", help="also search the recitals (considerandos)")
     args = ap.parse_args()
-    index = Index(args.strategy, exclude_kinds=("considerando",) if args.no_recitals else ())
+    index = Index(args.strategy, exclude_kinds=() if args.with_recitals else DEFAULT_EXCLUDE)
     res = evaluate(args.strategy, index)
-    print(f"strategy: {res['strategy']}{' (no recitals)' if args.no_recitals else ''}  ({res['n']} answerable questions)\n")
+    print(f"strategy: {res['strategy']}{' (with recitals)' if args.with_recitals else ''}  ({res['n']} answerable questions)\n")
     for r in res["rows"]:
         pos = r["rank"] if r["rank"] else "-"
         print(f"{r['id']}  rank={pos:<3} esperado={' / '.join(r['expected']):<28} top3={r['top3']}")
