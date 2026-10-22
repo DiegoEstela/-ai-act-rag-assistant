@@ -23,7 +23,7 @@ La información debe facilitarse **de manera clara y distinguible a más tardar 
 **Juez (Sonnet 5.5):** fidelidad 5, correctitud 5
 **Nota del juez:** La respuesta cubre la obligación del art. 50.1, la excepción por evidencia, la excepción para sistemas autorizados por ley para fines penales y el momento de la información (art. 50.5), todo respaldado por el contexto y coherente con la respuesta esperada.
 
-**Tu puntaje:** fidelidad __ , correctitud __ . ¿De acuerdo con el juez? sí / no. Comentario: 
+**Tu puntaje:** fidelidad 5 , correctitud 5 . ¿De acuerdo con el juez? sí. Comentario: 
 
 
 ---
@@ -48,7 +48,7 @@ Además, el Considerando 31 especifica que están prohibidos los sistemas de IA 
 **Juez (Sonnet 5.5):** fidelidad 5, correctitud 2
 **Nota del juez:** Todo lo afirmado está respaldado por los fragmentos (art. 5.1.a y considerando 31), pero la respuesta cubre solo la prohibición de técnicas subliminales/manipuladoras y menciona de forma vaga la puntuación, omitiendo la mayoría de las prácticas prohibidas esperadas (explotación de vulnerabilidades, predicción de delitos, bases de datos faciales, inferencia de emociones, categorización biométrica, identificación biométrica remota).
 
-**Tu puntaje:** fidelidad __ , correctitud __ . ¿De acuerdo con el juez? sí / no. Comentario: 
+**Tu puntaje:** fidelidad 4 , correctitud 2 . ¿De acuerdo con el juez? sí. Comentario: 
 
 
 ---
@@ -81,7 +81,7 @@ Según el Artículo 26, los responsables del despliegue de sistemas de IA de alt
 **Juez (Sonnet 5.5):** fidelidad 4, correctitud 4
 **Nota del juez:** Casi todo está respaldado por el contexto, pero simplifica el apartado 5 (dice 'sin demora indebida' también para incidentes graves, que según el texto se informan 'inmediatamente') y omite la suspensión del uso; faltan además la conservación de registros (seis meses) y la información a las personas afectadas, aunque cubre la mayoría de lo esencial.
 
-**Tu puntaje:** fidelidad __ , correctitud __ . ¿De acuerdo con el juez? sí / no. Comentario: 
+**Tu puntaje:** fidelidad 4 , correctitud 4 . ¿De acuerdo con el juez? sí. Comentario: 
 
 
 ---
@@ -104,7 +104,7 @@ Sin embargo, los fragmentos consultados aclaran que también existe la posibilid
 **Juez (Sonnet 5.5):** fidelidad 4, correctitud 2
 **Nota del juez:** Lo que afirma está respaldado por los considerandos 50, 59 y 53, aunque presenta la lista de productos como un 'ámbito de uso' y generaliza algo el considerando 53; en cambio, omite la enumeración del anexo III (ocho ámbitos) y solo cubre uno de ellos (garantía del cumplimiento del Derecho), por lo que es muy incompleta.
 
-**Tu puntaje:** fidelidad __ , correctitud __ . ¿De acuerdo con el juez? sí / no. Comentario: 
+**Tu puntaje:** fidelidad 3 , correctitud 2 . ¿De acuerdo con el juez? sí. Comentario: 
 
 
 ---
@@ -123,4 +123,19 @@ Sin embargo, es importante notar que algunas disposiciones más generales del Re
 **Juez (Sonnet 5.5):** fidelidad 4, correctitud 3
 **Nota del juez:** La fecha del 2 de agosto de 2025 está respaldada por el Considerando 179, pero el segundo párrafo es confuso y repetitivo, y atribuye al 2 de agosto de 2026 la entrada en operación de la 'infraestructura de gobernanza completa', cuando el contexto habla de organismos notificados y estructura de gobernanza. La respuesta omite además la excepción del art. 101 y el plazo hasta 2027 para modelos ya comercializados (art. 111.3), por lo que es solo parcialmente correcta.
 
-**Tu puntaje:** fidelidad __ , correctitud __ . ¿De acuerdo con el juez? sí / no. Comentario: 
+**Tu puntaje:** fidelidad 4 , correctitud 3 . ¿De acuerdo con el juez? sí. Comentario: 
+
+---
+## Resultado de la validación
+
+| Caso | Juez (fid / cor) | Revisión manual (fid / cor) | Diferencia |
+|---|---|---|---|
+| q07 | 5 / 5 | 5 / 5 | 0 / 0 |
+| q01 | 5 / 2 | 4 / 2 | +1 / 0 |
+| q06 | 4 / 4 | 4 / 4 | 0 / 0 |
+| q04 | 4 / 2 | 3 / 2 | +1 / 0 |
+| q12 | 4 / 3 | 4 / 3 | 0 / 0 |
+
+- Correctitud: coincidencia exacta en 5 de 5 casos.
+- Fidelidad: coincidencia exacta en 3 de 5; en los otros 2 el juez fue 1 punto más generoso.
+- Conclusión: el juez es confiable para correctitud y tiende a ser algo indulgente con la fidelidad. Sus puntajes de fidelidad se leen como un techo, no como un valor exacto. Muestra de solo 5 casos.
