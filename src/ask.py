@@ -2,7 +2,7 @@
 import argparse
 import sys
 
-from src.generate import SYSTEM, answer, build_user_message
+from src.generate import DEFAULT_K, SYSTEM, answer, build_user_message
 from src.search import DEFAULT_EXCLUDE, Index
 
 
@@ -10,7 +10,7 @@ def main():
     sys.stdout.reconfigure(encoding="utf-8")
     ap = argparse.ArgumentParser(description="Ask the AI Act (RAG)")
     ap.add_argument("question")
-    ap.add_argument("-k", type=int, default=5, help="fragments to retrieve")
+    ap.add_argument("-k", type=int, default=DEFAULT_K, help="fragments to retrieve")
     ap.add_argument("--strategy", choices=["structural", "fixed"], default="structural")
     ap.add_argument("--show-context", action="store_true", help="print the retrieved fragments")
     ap.add_argument("--dry-run", action="store_true", help="print the prompt, do not call the API")

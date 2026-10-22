@@ -1,15 +1,15 @@
 {
- "_comment": "Floors set slightly below the measured baseline (see README). Raise them when the system improves; lowering one needs a reason in the commit message.",
+ "_comment": "Floors set one question below the measured baseline (see docs/EXPERIMENTO.md). Raise them when the system improves; lowering one needs a reason in the commit message.",
  "retrieval": {
-  "hit@3": {"min": 0.50},
-  "hit@5": {"min": 0.75},
-  "hit@10": {"min": 0.83},
-  "mrr": {"min": 0.55}
+  "hit@3": {"min": 0.83},
+  "hit@5": {"min": 0.92},
+  "hit@10": {"min": 0.92},
+  "mrr": {"min": 0.70}
  },
  "generation": {
-  "faithfulness_mean": {"min": 4.3},
-  "correctness_mean": {"min": 3.0},
-  "citation_rate": {"min": 0.66},
+  "faithfulness_mean": {"min": 4.2},
+  "correctness_mean": {"min": 3.3},
+  "citation_rate": {"min": 0.83},
   "abstention_rate_out_of_scope": {"min": 1.0},
   "false_abstention_rate": {"max": 0.10}
  }

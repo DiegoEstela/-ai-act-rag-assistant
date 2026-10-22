@@ -14,7 +14,7 @@ import anthropic
 from dotenv import load_dotenv
 
 from evals.golden import load_golden
-from src.generate import NOT_FOUND, answer
+from src.generate import DEFAULT_K, NOT_FOUND, answer
 from src.search import DEFAULT_EXCLUDE, Index
 
 load_dotenv()
@@ -91,7 +91,7 @@ def main():
     sys.stdout.reconfigure(encoding="utf-8")
     ap = argparse.ArgumentParser(description="Generation evals (LLM-as-judge)")
     ap.add_argument("--strategy", choices=["structural", "fixed"], default="structural")
-    ap.add_argument("-k", type=int, default=5)
+    ap.add_argument("-k", type=int, default=DEFAULT_K)
     ap.add_argument("--reuse", action="store_true", help="reuse saved answers and judgements, no API calls")
     ap.add_argument("--with-recitals", action="store_true", help="also search the recitals (considerandos)")
     args = ap.parse_args()

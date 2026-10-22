@@ -7,6 +7,7 @@ from src.search import Index
 load_dotenv()  # reads ANTHROPIC_API_KEY from .env (never committed)
 
 MODEL = "claude-haiku-4-5"
+DEFAULT_K = 8  # fragments per question; k=8 beat k=5 on correctness, k=10 added nothing (docs/EXPERIMENTO.md)
 NOT_FOUND = "El reglamento no lo indica en los fragmentos consultados."
 
 SYSTEM = f"""Sos un asistente de consultas sobre el Reglamento (UE) 2024/1689 (Ley de IA).
@@ -27,7 +28,7 @@ def build_user_message(question: str, chunks: list[dict]) -> str:
     return f"<fragmentos>\n{build_context(chunks)}\n</fragmentos>\n\nPregunta: {question}"
 
 
-def answer(question: str, index: Index, k: int = 5, model: str = MODEL) -> dict:
+def answer(question: str, index: Index, k: int = DEFAULT_K, model: str = MODEL) -> dict:
     chunks = index.search(question, k)
     response = anthropic.Anthropic().messages.create(
         model=model,

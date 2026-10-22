@@ -7,6 +7,7 @@ import pytest
 from evals import generation
 from evals.retrieval import evaluate
 from src.embed import PROCESSED
+from src.generate import DEFAULT_K
 
 THRESHOLDS = json.loads(Path("evals/thresholds.json").read_text(encoding="utf-8"))
 
@@ -44,5 +45,5 @@ def test_structural_chunking_is_not_worse_than_fixed_size():
 @needs_index
 def test_generation_meets_thresholds(tmp_path, monkeypatch):
     monkeypatch.setattr(generation, "RESULTS", tmp_path)  # do not overwrite the committed baseline
-    rows = generation.run("structural", k=5, reuse=False)
+    rows = generation.run("structural", k=DEFAULT_K, reuse=False)
     check(generation.summarize(rows), THRESHOLDS["generation"])
